@@ -18,4 +18,15 @@ export class Movies {
 
     });
   }
+
+    public getMovie(id: string){
+    console.log("Get movie: " + id);
+    return new Promise( resolve => {
+      let url = 'http://www.omdbapi.com/?i=' + id;
+      this.http.get(url)
+                .map(result => { return result.json(); })
+                .subscribe(data => resolve(data));
+
+    });
+  }
 }

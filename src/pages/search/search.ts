@@ -5,8 +5,7 @@ import {Movies} from '../../providers/movies';
 
 @Component({
   selector: 'SearchPage',
-  templateUrl: 'search.html',
-  providers: [ Movies ]
+  templateUrl: 'search.html'
 })
 export class SearchPage {
 
@@ -22,9 +21,4 @@ export class SearchPage {
     this.movieRepository.search(this.searchText)
         .then(data => { this.movies = data; }, error => console.log(error));
   }
-
-
-  ionViewDidLoad() {
-  }
-
 }

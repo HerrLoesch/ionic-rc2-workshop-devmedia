@@ -3,6 +3,8 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { SearchPage } from '../pages/search/search';
+import { DetailsPage } from '../pages/details/details';
+
 
 
 @Component({
@@ -10,7 +12,7 @@ import { SearchPage } from '../pages/search/search';
 })
 export class MyApp {
 
-  rootPage = SearchPage;
+  rootPage = DetailsPage;
 
   constructor(platform: Platform) {
 

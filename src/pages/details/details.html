@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <h2>{{movie.Title}}</h2>
+      <p>{{movie.Year}}</p>
+    </ion-card-content>
+    
+    <img *ngIf="movie.Post != 'N/A'" src="{{movie.Poster}}" />
+
+    <ion-card-content>
+      {{movie.Plot}}
+    </ion-card-content>
+
+      <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <ion-badge>
+                <ion-icon name="star-half"> {{movie.imdbRating}}</ion-icon>
+              </ion-badge>
+            </ion-col>
+
+            <ion-col text-right>
+              <ion-badge>
+                <ion-icon name="text"> {{movie.imdbVotes}}</ion-icon>
+              </ion-badge>
+            </ion-col>
+          </ion-row>
+
+      </ion-card-content>
+    </ion-card>
+</ion-content>
