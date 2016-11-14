@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { SearchPage } from '../pages/search/search';
-import { DetailsPage } from '../pages/details/details';
+import { HomePage } from '../pages/home/home';
 
 
 
@@ -12,7 +11,7 @@ import { DetailsPage } from '../pages/details/details';
 })
 export class MyApp {
 
-  rootPage = SearchPage;
+  rootPage = HomePage;
 
   constructor(platform: Platform) {
 

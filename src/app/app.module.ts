@@ -3,6 +3,12 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
 import { DetailsPage } from '../pages/details/details';
+import { HomePage } from '../pages/home/home';
+import { FavoritePage } from '../pages/favorite/favorite';
+import { AboutPage } from '../pages/about/about';
+
+
+
 
 import {Movies} from '../providers/movies';
 
@@ -10,7 +16,10 @@ import {Movies} from '../providers/movies';
   declarations: [
     MyApp,
     SearchPage,
-    DetailsPage
+    DetailsPage,
+    HomePage,
+    FavoritePage,
+    AboutPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -19,7 +28,10 @@ import {Movies} from '../providers/movies';
   entryComponents: [
     MyApp,
     SearchPage,
-    DetailsPage
+    DetailsPage,
+    HomePage,
+    FavoritePage,
+    AboutPage    
   ],
   providers: [Movies]
 })
