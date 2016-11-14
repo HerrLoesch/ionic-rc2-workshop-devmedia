@@ -12,7 +12,7 @@ import { DetailsPage } from '../pages/details/details';
 })
 export class MyApp {
 
-  rootPage = DetailsPage;
+  rootPage = SearchPage;
 
   constructor(platform: Platform) {
 

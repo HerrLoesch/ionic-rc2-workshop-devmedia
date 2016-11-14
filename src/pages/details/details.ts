@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import {Movies} from '../../providers/movies';
 
@@ -9,15 +9,16 @@ import {Movies} from '../../providers/movies';
 })
 export class DetailsPage implements OnInit {
 
-  constructor(public navCtrl: NavController, private movieRepository: Movies) {
+  constructor(public navCtrl: NavController, private movieRepository: Movies, private params: NavParams) {
+    
   }
 
  public movie:any = {};
 
  ngOnInit(){
    console.log("initialize Details Page");
-
-   this.movieRepository.getMovie("tt4244162").then(data => {this.movie = data});
+   let id = this.params.get("id");
+   this.movieRepository.getMovie(id).then(data => {this.movie = data});
 
  }
 }

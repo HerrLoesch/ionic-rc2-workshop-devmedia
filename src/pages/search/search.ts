@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import {DetailsPage} from '../details/details';
+
 import {Movies} from '../../providers/movies';
 
 @Component({
@@ -20,5 +22,9 @@ export class SearchPage {
   onSearchInput() {
     this.movieRepository.search(this.searchText)
         .then(data => { this.movies = data; }, error => console.log(error));
+  }
+
+  showDetails(id:string) {
+    this.navCtrl.push(DetailsPage, { "id": id});
   }
 }
