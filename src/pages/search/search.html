@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Search</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-searchbar name="searchBar"
+    [(ngModel)]="searchText"
+    (ionInput)="onSearchInput()"
+    debounce="500"
+  >    
+  </ion-searchbar>
+  <ion-list>
+    <ion-item-sliding *ngFor="let movie of movies">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img *ngIf="movie.Poster !== 'N/A'" src="{{movie.Poster}}" >
+        </ion-thumbnail>
+
+          <h2>{{movie.Title}}</h2>
+          <p>{{movie.Year}}</p>
+          <p>{{movie.Type}}</p>
+        </ion-item>     
+
+        <ion-item-options side="right">
+          <button ion-button >
+            <ion-icon name="star" ></ion-icon>
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
