@@ -7,10 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { FavoritePage } from '../pages/favorite/favorite';
 import { AboutPage } from '../pages/about/about';
 
-
-
-
 import {Movies} from '../providers/movies';
+import {AddFavoritePage} from "../pages/add-favorite/add-favorite";
 
 @NgModule({
   declarations: [
@@ -19,7 +17,8 @@ import {Movies} from '../providers/movies';
     DetailsPage,
     HomePage,
     FavoritePage,
-    AboutPage
+    AboutPage,
+    AddFavoritePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -31,7 +30,8 @@ import {Movies} from '../providers/movies';
     DetailsPage,
     HomePage,
     FavoritePage,
-    AboutPage    
+    AboutPage,
+    AddFavoritePage
   ],
   providers: [Movies]
 })

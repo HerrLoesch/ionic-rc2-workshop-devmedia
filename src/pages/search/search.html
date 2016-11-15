@@ -14,7 +14,7 @@
     [(ngModel)]="searchText"
     (ionInput)="onSearchInput()"
     debounce="500"
-  >    
+  >
   </ion-searchbar>
   <ion-list>
     <ion-item-sliding *ngFor="let movie of movies">
@@ -26,10 +26,10 @@
           <h2>{{movie.Title}}</h2>
           <p>{{movie.Year}}</p>
           <p>{{movie.Type}}</p>
-        </button>     
+        </button>
 
         <ion-item-options side="right">
-          <button ion-button >
+          <button ion-button (click)="addFavorite(movie)" >
             <ion-icon name="star" ></ion-icon>
           </button>
         </ion-item-options>
