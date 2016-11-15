@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NavParams, ViewController} from 'ionic-angular';
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'AddFavoritePage',
@@ -7,20 +8,31 @@ import {NavParams, ViewController} from 'ionic-angular';
 })
 export class AddFavoritePage {
 
-  title: string;
-  year: string;
+  title: string = "";
+  year: string = "";
 
-  constructor(private viewController: ViewController, private params: NavParams) {
+  formData:FormGroup;
+
+  constructor(private viewController: ViewController, private params: NavParams, private builder:FormBuilder) {
+
     this.title = this.params.get("Title");
     this.year = this.params.get("Year");
+
+      this.formData = this.builder.group(
+        { comments: ['', Validators.minLength(5)]}
+      );
   }
 
   public dismiss(){
     this.viewController.dismiss();
   }
 
-  ionViewDidLoad() {
-    console.log('Hello AddFavorite Page');
-  }
+  public save(){
+    let favorite = {
+      "comments": this.formData.value.comments,
+      "id": this.params.get("imdbID")
+    }
 
+    this.dismiss();
+  }
 }
