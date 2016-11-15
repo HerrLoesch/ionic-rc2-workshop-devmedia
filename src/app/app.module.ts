@@ -9,6 +9,7 @@ import { AboutPage } from '../pages/about/about';
 
 import {Movies} from '../providers/movies';
 import {AddFavoritePage} from "../pages/add-favorite/add-favorite";
+import {MovieStorage} from "../providers/movie-storage";
 
 @NgModule({
   declarations: [
@@ -33,6 +34,6 @@ import {AddFavoritePage} from "../pages/add-favorite/add-favorite";
     AboutPage,
     AddFavoritePage
   ],
-  providers: [Movies]
+  providers: [Movies, MovieStorage]
 })
 export class AppModule {}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NavParams, ViewController} from 'ionic-angular';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import {MovieStorage} from "../../providers/movie-storage";
 
 @Component({
   selector: 'AddFavoritePage',
@@ -13,7 +14,7 @@ export class AddFavoritePage {
 
   formData:FormGroup;
 
-  constructor(private viewController: ViewController, private params: NavParams, private builder:FormBuilder) {
+  constructor(private viewController: ViewController, private params: NavParams, private builder:FormBuilder, private storage:MovieStorage) {
 
     this.title = this.params.get("Title");
     this.year = this.params.get("Year");
@@ -32,6 +33,8 @@ export class AddFavoritePage {
       "comments": this.formData.value.comments,
       "id": this.params.get("imdbID")
     }
+
+    this.storage.addFavorite(favorite);
 
     this.dismiss();
   }

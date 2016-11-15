@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {MovieStorage} from "../../providers/movie-storage";
 
 /*
   Generated class for the Favorite page.
@@ -13,10 +14,10 @@ import { NavController } from 'ionic-angular';
 })
 export class FavoritePage {
 
-  constructor(public navCtrl: NavController) {}
+  favorites: any;
 
-  ionViewDidLoad() {
-    console.log('Hello FavoritePage Page');
+  constructor(public navCtrl: NavController, private storage:MovieStorage) {
+    this.favorites = [];
+    this.storage.getFavorites().then(data => this.favorites = data);
   }
-
 }
