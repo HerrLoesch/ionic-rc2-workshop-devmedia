@@ -16,8 +16,8 @@ export class FavoritePage {
 
   favorites: any;
 
-  constructor(public navCtrl: NavController, private storage:MovieStorage) {
+  constructor(public navCtrl: NavController/*, private storage:MovieStorage*/) {
     this.favorites = [];
-    this.storage.getFavorites().then(data => this.favorites = data);
+    //this.storage.getFavorites().then(data => this.favorites = data);
   }
 }

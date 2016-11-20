@@ -18,14 +18,14 @@
   </ion-searchbar>
   <ion-list>
     <ion-item-sliding *ngFor="let movie of movies">
-      <button ion-item (click)="showDetails(movie.imdbID)">
+      <button ion-item (click)="showDetails(movie.id)">
         <ion-thumbnail item-left>
-          <img *ngIf="movie.Poster !== 'N/A'" src="{{movie.Poster}}" >
+          <img *ngIf="movie.posterUrl" src="{{movie.posterUrl}}" >
         </ion-thumbnail>
 
-          <h2>{{movie.Title}}</h2>
-          <p>{{movie.Year}}</p>
-          <p>{{movie.Type}}</p>
+          <h2>{{movie.title}}</h2>
+          <p>{{movie.year}}</p>
+          <p>{{movie.type}}</p>
         </button>
 
         <ion-item-options side="right">
